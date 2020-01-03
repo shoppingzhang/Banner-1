@@ -34,6 +34,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
 
     private int mIndicatorPadding = BannerConfig.PADDING_SIZE;
     private int mIndicatorMargin = BannerConfig.MARGIN_BOTTOM;
+    private int mIndicatorMarginLeft = BannerConfig.MARGIN_BOTTOM;
     private int mIndicatorWidth;
     private int mIndicatorHeight;
     private int indicatorSize;
@@ -118,6 +119,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         RelativeLayout.LayoutParams indicatorParam = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.WRAP_CONTENT);
         indicatorParam.bottomMargin = mIndicatorMargin;
+        indicatorParam.leftMargin = mIndicatorMarginLeft;
         indicator.setLayoutParams(indicatorParam);
         indicatorInside = view.findViewById(R.id.indicatorInside);
         bannerTitle = view.findViewById(R.id.bannerTitle);
@@ -136,6 +138,7 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
         mIndicatorHeight = typedArray.getDimensionPixelSize(R.styleable.Banner_indicator_height, indicatorSize);
         mIndicatorPadding = typedArray.getDimensionPixelSize(R.styleable.Banner_indicator_padding, BannerConfig.PADDING_SIZE);
         mIndicatorMargin = typedArray.getDimensionPixelSize(R.styleable.Banner_indicator_margin, BannerConfig.MARGIN_BOTTOM);
+        mIndicatorMarginLeft = typedArray.getDimensionPixelSize(R.styleable.Banner_indicator_margin_left, BannerConfig.MARGIN_BOTTOM);
         mIndicatorSelectedResId = typedArray.getResourceId(R.styleable.Banner_indicator_drawable_selected, R.drawable.gray_radius);
         mIndicatorUnselectedResId = typedArray.getResourceId(R.styleable.Banner_indicator_drawable_unselected, R.drawable.white_radius);
         delayTime = typedArray.getInt(R.styleable.Banner_delay_time, BannerConfig.TIME);

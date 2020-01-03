@@ -86,7 +86,7 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <ImageView
+    <com.ms.banner.view.RoundImageView
         android:id="@+id/bannerDefaultImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
